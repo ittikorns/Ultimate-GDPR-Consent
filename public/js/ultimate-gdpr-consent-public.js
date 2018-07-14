@@ -71,7 +71,12 @@
 			var self = this;
 			$(document).scroll(function() {
 				var y = $(this).scrollTop();
-				if (self.elements.cookie_bar.hasClass('ugc-show-scroll') && self.elements.cookie_bar.hasClass('ugc-hidden')) {
+				if (
+					self.elements.cookie_bar.hasClass('ugc-show-scroll') &&
+					self.elements.cookie_bar.hasClass('ugc-hidden') &&
+					!self.elements.cookie_bar.hasClass('ugc-allowed') &&
+					!self.elements.cookie_bar.hasClass('ugc-declined')
+				) {
 					if (y > 150) {
 						self.elements.cookie_bar.removeClass('ugc-hidden').addClass('ugc-scroll-show');
 					}
@@ -152,13 +157,23 @@
 		},
 		hideCookieBar: function() {
 			var self = this;
-			self.elements.cookie_bar.css({
-				'-webkit-transform': 'translateY(-' + self.elements.cookie_bar_height + 'px)',
-				'-moz-transform': 'translateY(-' + self.elements.cookie_bar_height + 'px)',
-				'-ms-transform': 'translateY(-' + self.elements.cookie_bar_height + 'px)',
-				'-o-transform': 'translateY(-' + self.elements.cookie_bar_height + 'px)',
-				transform: 'translateY(-' + self.elements.cookie_bar_height + 'px)'
-			});
+			if (self.elements.cookie_bar.hasClass('ugc-fixed-top')) {
+				self.elements.cookie_bar.css({
+					'-webkit-transform': 'translateY(-' + self.elements.cookie_bar_height + 'px)',
+					'-moz-transform': 'translateY(-' + self.elements.cookie_bar_height + 'px)',
+					'-ms-transform': 'translateY(-' + self.elements.cookie_bar_height + 'px)',
+					'-o-transform': 'translateY(-' + self.elements.cookie_bar_height + 'px)',
+					transform: 'translateY(-' + self.elements.cookie_bar_height + 'px)'
+				});
+			} else if (self.elements.cookie_bar.hasClass('ugc-fixed-bottom')) {
+				self.elements.cookie_bar.css({
+					'-webkit-transform': 'translateY(' + self.elements.cookie_bar_height + 'px)',
+					'-moz-transform': 'translateY(' + self.elements.cookie_bar_height + 'px)',
+					'-ms-transform': 'translateY(' + self.elements.cookie_bar_height + 'px)',
+					'-o-transform': 'translateY(' + self.elements.cookie_bar_height + 'px)',
+					transform: 'translateY(' + self.elements.cookie_bar_height + 'px)'
+				});
+			}
 		}
 	});
 
