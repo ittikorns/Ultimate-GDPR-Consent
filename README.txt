@@ -4,7 +4,7 @@ Donate link: https://www.wpexec.com
 Tags: GDPR, eu cookie law, cookie consent, ultimate cookie, privacy, compliance, privacy directive, cookie, cookies, bar, cookies notification, cookies notice
 Requires at least: 3.3.1
 Tested up to: 4.9.7
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,12 @@ This section describes how to install the plugin and get it working.
 6. Customize Decline Button
 
 == Changelog ==
+
+= 1.0.1 =
+Release Date: July 14th, 2018
+
+Bugfixes:
+* Fixes a bug when cookie bar positioned at bottom and slide up when click on accept or decline button
 
 = 1.0.0 =
 Release Date: July 14th, 2018
