@@ -1,0 +1,108 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+.wrap.ultimate-gdpr-consent {
+	.ugc-tabs-container {
+		.ugc-tab {
+			display: none;
+			&.ugc-tab-active {
+				display: block;
+			}
+		}
+	}
+	#ugc-conf {
+		fieldset {
+			// margin-bottom: 1rem;
+		}
+		input[type='text'],
+		textarea {
+			width: 300px;
+		}
+		textarea {
+			width: 500px;
+			height: 100px;
+		}
+		label.ugc-label {
+			font-weight: bold;
+			margin-bottom: 0.5rem;
+			display: block;
+		}
+		.toggle-radio {
+			display: block;
+			position: relative;
+			.switch {
+				/* position: absolute; */
+				position: relative;
+				width: 180px;
+				height: 40px;
+				text-align: center;
+				background: #00bc9c;
+				transition: all 0.2s ease;
+				border-radius: 4px;
+			}
+			.switch span {
+				position: absolute;
+				width: 20px;
+				height: 4px;
+				top: 50%;
+				left: 49%;
+				margin: -2px 0px 0px -4px;
+				background: #fff;
+				display: block;
+				transform: rotate(-45deg);
+				transition: all 0.2s ease;
+			}
+			.switch span:after {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 4px;
+				height: 12px;
+				margin-top: -8px;
+				background: #fff;
+				transition: all 0.2s ease;
+			}
+			input[type='radio'] {
+				display: none;
+			}
+			.switch label {
+				cursor: pointer;
+				color: rgba(0, 0, 0, 0.2);
+				width: 60px;
+				line-height: 40px;
+				font-weight: bold;
+				transition: all 0.2s ease;
+			}
+			.switch label.yes {
+				position: absolute;
+				left: 5px;
+				height: 20px;
+			}
+			.switch label.no {
+				position: absolute;
+				right: 5px;
+			}
+			.radio_no:checked ~ .switch {
+				background: #eb4f37;
+			}
+			.radio_no:checked ~ .switch span {
+				background: #fff;
+				margin-left: -8px;
+			}
+			.radio_no:checked ~ .switch span:after {
+				background: #fff;
+				height: 20px;
+				margin-top: -8px;
+				margin-left: 8px;
+			}
+			.radio_yes:checked ~ .switch label.yes {
+				color: #fff;
+			}
+			.radio_no:checked ~ .switch label.no {
+				color: #fff;
+			}
+		}
+	}
+}
