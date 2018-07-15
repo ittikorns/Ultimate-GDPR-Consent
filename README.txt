@@ -58,7 +58,7 @@ This section describes how to install the plugin and get it working.
 
 === Manually ===
 
-1. Upload `ultimate-gdpr-consent.php` to the `/wp-content/plugins/` directory
+1. Upload extracted `ultimate-gdpr-consent` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Enable and config your plugin under **Ultimate GDPR** menu
 
