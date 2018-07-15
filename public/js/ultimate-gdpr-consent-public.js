@@ -16,8 +16,6 @@
 
 	$.extend(Plugin.prototype, {
 		init: function() {
-			var self = this;
-
 			this.elements = {};
 			this.elements.body = $('body');
 			this.elements.cookie_bar = $('#ugc-cookie-bar');
@@ -36,19 +34,12 @@
 		},
 		checkCookiesOptions: function() {
 			var self = this;
-			console.log('checking cookies options');
 			$.ajax({
 				type: 'post',
 				url: self.options.ajax_url,
 				dataType: 'json',
 				data: {
 					action: 'ultimate_gdpr_consent_check_cookies_options'
-				},
-				success: function(response) {},
-				error: function(xhr, ajaxOptions, thrownError) {
-					console.log(xhr);
-					console.log(ajaxOptions);
-					console.log(thrownError);
 				}
 			});
 		},
@@ -77,7 +68,7 @@
 					!self.elements.cookie_bar.hasClass('ugc-allowed') &&
 					!self.elements.cookie_bar.hasClass('ugc-declined')
 				) {
-					if (y > 150) {
+					if (y > parseInt(self.options.scroll_offset)) {
 						self.elements.cookie_bar.removeClass('ugc-hidden').addClass('ugc-scroll-show');
 					}
 				}
@@ -96,14 +87,9 @@
 					data: {
 						action: 'ultimate_gdpr_consent_decline_cookies'
 					},
-					success: function(response) {
+					success: function() {
 						self.elements.cookie_bar.addClass('ugc-force-hide ugc-hidden');
 						self.hideCookieBar();
-					},
-					error: function(xhr, ajaxOptions, thrownError) {
-						console.log(xhr);
-						console.log(ajaxOptions);
-						console.log(thrownError);
 					}
 				});
 			});
@@ -119,24 +105,19 @@
 					data: {
 						action: 'ultimate_gdpr_consent_allow_cookies'
 					},
-					success: function(response) {
+					success: function() {
 						self.elements.cookie_bar.addClass('ugc-force-hide ugc-hidden');
 						self.hideCookieBar();
-					},
-					error: function(xhr, ajaxOptions, thrownError) {
-						console.log(xhr);
-						console.log(ajaxOptions);
-						console.log(thrownError);
 					}
 				});
 			});
 		},
 		onToggle: function() {
 			var self = this;
-			self.elements.acceptButton.on('click', function(e) {
+			self.elements.acceptButton.on('click', function() {
 				self.elements.cookie_toggle.toggleClass('ugc-toggle-hide ugc-hidden');
 			});
-			self.elements.declineButton.on('click', function(e) {
+			self.elements.declineButton.on('click', function() {
 				self.elements.cookie_toggle.toggleClass('ugc-toggle-hide ugc-hidden');
 			});
 			self.elements.cookie_toggle.on('click', function() {

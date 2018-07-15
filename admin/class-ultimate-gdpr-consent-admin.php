@@ -218,6 +218,7 @@ class Ultimate_Gdpr_Consent_Admin {
 		$valid['cookie_bar']['text_color'] = $this->isSetAndNotEmpty($input['cookie_bar']['text_color']) ? $input['cookie_bar']['text_color'] : 'rgba(255, 255, 255, 1)';
 		$valid['cookie_bar']['show_border'] = $this->isSetAndNotEmpty($input['cookie_bar']['show_border']) ? $input['cookie_bar']['show_border'] : '0';
 		$valid['cookie_bar']['border_color'] = $this->isSetAndNotEmpty($input['cookie_bar']['border_color']) ? $input['cookie_bar']['border_color'] : 'rgba(0, 0, 0, 1)';
+		$valid['cookie_bar']['scroll_offset'] = $this->isSetAndNotEmpty($input['cookie_bar']['scroll_offset']) ? $input['cookie_bar']['scroll_offset'] : '150';
 
 		// Accept Button options
 		$valid['accept_button']['text'] = $this->isSetAndNotEmpty($input['accept_button']['text']) ? $input['accept_button']['text'] : 'Accept';

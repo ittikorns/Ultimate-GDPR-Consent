@@ -72,6 +72,7 @@ class Ultimate_Gdpr_Consent_Public {
 				'text_color'		=>	'rgba(255, 255, 255, 1)',
 				'show_border'		=>	'0',
 				'border_color'		=>	'rgba(0, 0, 0, 1)',
+				'scroll_offset'		=>	'150'
 			),
 			'cookie_toggle_button' => array(
 				'status'			=>	'1',
@@ -155,6 +156,7 @@ class Ultimate_Gdpr_Consent_Public {
 		$strings = array(
 			'ajax_url' => admin_url('admin-ajax.php'),
 			'auto_hide_delay'	=>	$options['cookie_bar_auto_hide_delay'],
+			'scroll_offset'	=>	$options['cookie_bar']['scroll_offset'],
 		);
 		return $strings;
 	}

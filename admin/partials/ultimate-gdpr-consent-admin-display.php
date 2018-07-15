@@ -116,6 +116,15 @@ $options = get_option($this->plugin_name);
                                             </tr>
                                             <tr>
                                                 <th scope="row">
+                                                    <label for="<?=$this->plugin_name;?>[cookie_bar][scroll_offset]"><?php esc_attr_e('How many pixels from top user has to scroll before the cookie bar starting to appear', $this->plugin_name); ?></label>
+                                                </th>
+                                                <td>
+                                                    <input name="<?=$this->plugin_name;?>[cookie_bar][scroll_offset]" ng-model="form.cookie_bar.scroll_offset" type="text" id="cookie_bar_scroll_offset" class="regular-text ltr" />
+                                                    <p class="cookie_bar_scroll_offset"><?php esc_attr_e('This box accepts value in pixels. In example, a value of 150 is for 150 pixels', $this->plugin_name); ?></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
                                                     <label for="<?=$this->plugin_name;?>[cookie_bar_auto_hide]"><?php esc_attr_e('Auto-Hide Features', $this->plugin_name); ?></label>
                                                 </th>
                                                 <td>
