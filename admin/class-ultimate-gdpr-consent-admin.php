@@ -134,6 +134,22 @@ class Ultimate_Gdpr_Consent_Admin {
 			add_option( $this->plugin_name );
 		} // end if
 
+		// Details link using API info, if available
+		if ( isset( $plugin_data['slug'] ) && current_user_can( 'install_plugins' ) ) {
+		    $plugin_meta[] = sprintf( '<a href="%s" class="thickbox" aria-label="%s" data-title="%s">%s</a>',
+		        esc_url( network_admin_url( 'plugin-install.php?tab=plugin-information&plugin=' . $plugin_data['slug'] .
+		            '&TB_iframe=true&width=600&height=550' ) ),
+		        esc_attr( sprintf( __( 'More information about %s' ), $plugin_name ) ),
+		        esc_attr( $plugin_name ),
+		        __( 'View details' )
+		    );
+		} elseif ( ! empty( $plugin_data['PluginURI'] ) ) {
+		    $plugin_meta[] = sprintf( '<a href="%s">%s</a>',
+		        esc_url( $plugin_data['PluginURI'] ),
+		        __( 'Visit plugin site' )
+		    );
+		}
+
 	}
 
 	/**
