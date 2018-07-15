@@ -121,7 +121,9 @@ class Ultimate_Gdpr_Consent_Admin {
      *        Administration Menus: http://codex.wordpress.org/Administration_Menus
      *
      */
-    	add_menu_page( 'Ultimate GDPR Consent', 'Ultimate GDPR', 'manage_options', $this->plugin_name, array($this, 'display_plugin_setup_page') );
+		$svg_icon = '<svg id="666da539-9a95-4458-8680-6eee8fc3d7e3" data-name="Layer 1 copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252.2552 252.2601"><title>Ultimate GDPR Consent</title><polygon points="102.651 120.863 91.365 130.792 118.446 160.977 118.499 160.924 118.536 160.977 167.102 111.621 158.434 100.227 118.961 132.711 102.651 120.863" style="fill:#83878b;stroke:#fff;stroke-miterlimit:10;stroke-width:2px"/><path d="M141.729,17.6667a124.13,124.13,0,1,0,124.13,124.1275A124.1292,124.1292,0,0,0,141.729,17.6667Zm.0024,192.721c-63.8731,0-68.4229-108.0693-68.4229-108.0693L141.73,73.2h.0016l68.4214,29.1184S205.603,210.3877,141.7314,210.3877Z" transform="translate(-15.6039 -15.6667)" style="fill:#83878b;stroke:#fff;stroke-miterlimit:10;stroke-width:4px"/></svg>';
+
+    	add_menu_page( 'Ultimate GDPR Consent', 'Ultimate GDPR', 'manage_options', $this->plugin_name, array($this, 'display_plugin_setup_page'),  'data:image/svg+xml;base64,' . base64_encode($svg_icon) );
 
 	}
 
