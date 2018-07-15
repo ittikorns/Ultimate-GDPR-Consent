@@ -68,7 +68,7 @@
 					!self.elements.cookie_bar.hasClass('ugc-allowed') &&
 					!self.elements.cookie_bar.hasClass('ugc-declined')
 				) {
-					if (y > parseInt(self.options.scroll_offset)) {
+					if (y > parseInt(self.options.scroll_offset) || $(window).scrollTop() == $(document).height() - $(window).height()) {
 						self.elements.cookie_bar.removeClass('ugc-hidden').addClass('ugc-scroll-show');
 					}
 				}
