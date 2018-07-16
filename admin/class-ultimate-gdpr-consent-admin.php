@@ -204,6 +204,8 @@ class Ultimate_Gdpr_Consent_Admin {
 
 		$valid['custom_allowed_cookies'] = $this->isSetAndNotEmpty($input['custom_allowed_cookies']) ? $input['custom_allowed_cookies'] : 'wordpress_test_cookie,wordpress_logged_in_,wordpress_sec,wp-settings';
 
+		$valid['cookie_age'] = $this->isSetAndNotEmpty($input['cookie_age']) ? $input['cookie_age'] : '180';
+
 		// Cookie Toggle Button options
 		$valid['cookie_toggle_button']['status'] = $this->isSetAndNotEmpty($input['cookie_toggle_button']['status']) ? $input['cookie_toggle_button']['status'] : '1';
 		$valid['cookie_toggle_button']['text'] = $this->isSetAndNotEmpty($input['cookie_toggle_button']['text']) ? $input['cookie_toggle_button']['text'] : 'Cookies & Privacy Policy';

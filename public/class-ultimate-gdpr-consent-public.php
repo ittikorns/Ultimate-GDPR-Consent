@@ -66,6 +66,7 @@ class Ultimate_Gdpr_Consent_Public {
 			'cookie_decline_button'		=>	'1',
 			'custom_allowed_cookies'	=>	'wordpress_test_cookie,wordpress_logged_in_,wordpress_sec,wp-settings',
 			'cookie_bar_header_float'	=>	'float',
+			'cookie_age'				=>	'180',
 			'cookie_bar' => array(
 				'message'			=>	'This site uses cookies to provide you with a more responsive and personalized service. By using this site you agree to our use of cookies. Please read our cookie notice for more information on the cookies we use and how to delete or block them.',
 				'background_color'	=>	'rgba(33, 33, 33, 0.8)',
@@ -339,7 +340,8 @@ class Ultimate_Gdpr_Consent_Public {
 	}
 
 	public function allow_cookies(){
-		$cookie_lifetime = 180;
+		$options = get_option($this->plugin_name);
+		$cookie_lifetime = $options['cookie_age'];
 		$cookie_lifetime = time() + ($cookie_lifetime * 60 * 60 * 24);
 
 		$cookies = array(
@@ -358,7 +360,7 @@ class Ultimate_Gdpr_Consent_Public {
 
 	public function decline_cookies(){
 		$options = get_option($this->plugin_name);
-		$cookie_lifetime = 180;
+		$cookie_lifetime = $options['cookie_age'];
 		$cookie_lifetime = time() + ($cookie_lifetime * 60 * 60 * 24);
 		setcookie('ultimate_gdpr_consent_cookies_declined', 'true', $cookieLifetime, '/');
 
