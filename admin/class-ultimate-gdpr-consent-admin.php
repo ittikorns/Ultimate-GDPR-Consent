@@ -240,6 +240,11 @@ class Ultimate_Gdpr_Consent_Admin {
 		$valid['decline_button']['show_as'] = $this->isSetAndNotEmpty($input['decline_button']['show_as']) ? $input['decline_button']['show_as'] : 'text';
 		$valid['decline_button']['background_color'] = $this->isSetAndNotEmpty($input['decline_button']['background_color']) ? $input['decline_button']['background_color'] : 'transparent';
 
+		$valid['policy_update']['from'] = $this->isSetAndNotEmpty($input['policy_update']['from']) ? $input['policy_update']['from'] : get_option('admin_email');
+		$valid['policy_update']['from_name'] = $this->isSetAndNotEmpty($input['policy_update']['from_name']) ? $input['policy_update']['from_name'] : get_option('blogname');
+		$valid['policy_update']['subject'] = $this->isSetAndNotEmpty($input['policy_update']['subject']) ? $input['policy_update']['subject'] : __('Updates to our Privacy Policy');
+		$valid['policy_update']['message'] = $this->isSetAndNotEmpty($input['policy_update']['message']) ? $input['policy_update']['message'] : __('Hello %s! We hve updates our privacy policy.');
+
 		return $valid;
 	}
 

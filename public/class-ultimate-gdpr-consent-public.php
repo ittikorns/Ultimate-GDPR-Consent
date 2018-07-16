@@ -97,6 +97,12 @@ class Ultimate_Gdpr_Consent_Public {
 				'show_as'			=>	'link',
 				'background_color'	=>	'transparent',
 			),
+			'policy_update'	=>	array(
+				'from'				=>	get_option('admin_email'),
+				'from_name'			=>	get_option('blogname'),
+				'subject'			=>	__('Updates to our Privacy Policy'),
+				'message'			=>	__('Hello %s! We hve updates our privacy policy.'),
+			)
 		);
 
 		// merge options with defaults

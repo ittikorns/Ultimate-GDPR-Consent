@@ -115,6 +115,7 @@ class Ultimate_Gdpr_Consent {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-ultimate-gdpr-consent-admin.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-ultimate-gdpr-consent-log.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-ultimate-gdpr-consent-policy-update.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
@@ -173,7 +174,9 @@ class Ultimate_Gdpr_Consent {
         $this->loader->add_action('ultimate_gdpr_consent_decline_cookies', $this->log, 'update_usermeta_consent', 10);
 
 		// Ajax Actions
-		$this->loader->add_action( 'wp_ajax_ugc_get_settings', $plugin_admin, 'get_options' ); // Save Setting
+		$this->policy_update = new Ultimate_Gdpr_Consent_Policy_Update($this->get_plugin_name(), $this->get_version());
+		$this->loader->add_action( 'wp_ajax_ugc_get_settings', $plugin_admin, 'get_options' );
+		$this->loader->add_action( 'wp_ajax_ugc_send_policy_updates', $this->policy_update, 'send_policy_update' );
 		// $this->loader->add_action( 'wp_ajax_nopriv_ugc_get_settings', $plugin_admin, 'get_options' ); // Save Setting
 
 

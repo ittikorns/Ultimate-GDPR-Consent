@@ -113,6 +113,18 @@
 					}
 				);
 			};
+			$scope.sendPolicyUpdates = function($event) {
+				$($event.currentTarget)
+					.val('Sending...')
+					.attr('disabled', true)
+					.removeClass('button-primary');
+				ugcFactory.sendPolicyUpdates($scope).then(function(response) {
+					$($event.currentTarget)
+						.val('All done!')
+						.attr('disabled', false)
+						.addClass('button-primary');
+				});
+			};
 		}
 	]);
 
@@ -161,6 +173,13 @@
 					'ultimate-gdpr-consent': $scope.form
 				};
 				return factory.doPostOptionsHttpRequest($scope);
+			};
+
+			factory.sendPolicyUpdates = function($scope) {
+				$scope.post_data = {
+					action: 'ugc_send_policy_updates'
+				};
+				return factory.doPostAjaxHttpRequest($scope);
 			};
 
 			factory.doPostOptionsHttpRequest = function($scope) {

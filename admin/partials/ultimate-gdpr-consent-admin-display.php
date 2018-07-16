@@ -34,6 +34,7 @@ $options = get_option($this->plugin_name);
             <a href="#ugc-toggle-button" class="ugc-nav-tab nav-tab">Cookie Toggle Button</a>
             <a href="#ugc-accept-button" class="ugc-nav-tab nav-tab">Accept Button</a>
             <a href="#ugc-decline-button" class="ugc-nav-tab nav-tab">Decline Button</a>
+            <a href="#ugc-privacy-center" class="ugc-nav-tab nav-tab">Privacy Center</a>
         </h2>
         <div class="ugc_content_wrapper">
             <div class="ugc_content_cell">
@@ -512,6 +513,45 @@ $options = get_option($this->plugin_name);
 
                                     <p class="submit"><input type="button" name="submit" id="submit" class="button button-primary" value="Save all changes" ng-click="saveChanges();"></p>
                                     <!-- End Decline Button -->
+                                </div>
+                                <div id="ugc-privacy-center" class="ugc-tab">
+                                    <h3 style="margin-bottom: 30px"><?php _e('Privacy Center Setting', $this->plugin_name); ?></h3>
+                                    <table class="form-table">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">
+                                                    <label for="<?=$this->plugin_name;?>[cookie_bar]['message']"><?php _e('Policy Updates', $this->plugin_name); ?></label>
+                                                </th>
+                                                <td>
+                                                    <p><strong><?php _e('From:', $this->plugin_name); ?></strong></p>
+                                                    <input type="text" name="<?=$this->plugin_name;?>[policy_update][from]" ng-model="form.policy_update.from" id="policy_update" />
+                                                    <p><i><?php _e('The email address which emails are sent from.', $this->plugin_name); ?></i></p>
+
+                                                    <p><strong><?php _e('From Name:', $this->plugin_name); ?></strong></p>
+                                                    <input type="text" name="<?=$this->plugin_name;?>[policy_update][from_name]" ng-model="form.policy_update.from_name" id="policy_update" />
+                                                    <p><i><?php _e('The name which emails are sent from.', $this->plugin_name); ?></i></p>
+
+                                                    <p><strong><?php _e('Subject:', $this->plugin_name); ?></strong></p>
+                                                    <input type="text" name="<?=$this->plugin_name;?>[policy_update][subject]" ng-model="form.policy_update.subject" id="policy_update" />
+                                                    <p><i><?php _e('A Subject of your policy update email', $this->plugin_name); ?></i></p>
+
+                                                    <p><strong><?php _e('Message:', $this->plugin_name); ?></strong></p>
+                                                    <textarea name="<?=$this->plugin_name;?>[policy_update][message]" ng-model="form.policy_update.message" id="policy_update_message"></textarea>
+                                                    <p><i><?php _e('Message that you want to send in the email', $this->plugin_name); ?></i></p>
+
+                                                    <input type="button" name="submit" id="submit" class="button button-primary" value="Save changes" ng-click="saveChanges();">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <label for="<?=$this->plugin_name;?>[cookie_bar]['message']"><?php _e('Bulk Send Policy Updates Emails', $this->plugin_name); ?></label>
+                                                </th>
+                                                <td>
+                                                    <input type="button" name="submit" id="submit" class="button button-primary" value="Send Policy Updates Email to All Users" ng-click="sendPolicyUpdates($event);">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div><!-- .ugc-tabs-container -->
                         </div>
