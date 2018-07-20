@@ -537,7 +537,7 @@ $options = get_option($this->plugin_name);
 
                                                     <p><strong><?php _e('Message:', $this->plugin_name); ?></strong></p>
                                                     <textarea name="<?=$this->plugin_name;?>[policy_update][message]" ng-model="form.policy_update.message" id="policy_update_message"></textarea>
-                                                    <p><i><?php _e('Message that you want to send in the email', $this->plugin_name); ?></i></p>
+                                                    <p><i><?php _e('Message that you want to send in the email. %s will be replaced by username', $this->plugin_name); ?></i></p>
 
                                                     <input type="button" name="submit" id="submit" class="button button-primary" value="Save changes" ng-click="saveChanges();">
                                                 </td>
