@@ -171,69 +171,55 @@ class Ultimate_Gdpr_Consent_Admin {
 		$valid = array();
 		// var_dump($input)
 		//Cleanup
-		$valid['cookie_bar_status'] = $this->isSetAndNotEmpty($input['cookie_bar_status']) ? "1" : "0";
-		$valid['cookie_decline_button'] = $this->isSetAndNotEmpty($input['cookie_decline_button']) ? "1" : "0";
-		$valid['cookie_bar_position'] = $this->isSetAndNotEmpty($input['cookie_bar_position']) ? $input['cookie_bar_position'] : 'footer';
-		$valid['cookie_bar_header_float'] = $this->isSetAndNotEmpty($input['cookie_bar_header_float']) ? $input['cookie_bar_header_float'] : 'float';
+		$valid['cookie_bar_status'] = $input['cookie_bar_status'];
+		$valid['cookie_decline_button'] = $input['cookie_decline_button'];
+		$valid['cookie_bar_position'] = $input['cookie_bar_position'];
+		$valid['cookie_bar_header_float'] = $input['cookie_bar_header_float'];
 
-		$valid['cookie_bar_show_condition'] = $this->isSetAndNotEmpty($input['cookie_bar_show_condition']) ? $input['cookie_bar_show_condition'] : 'instant';
+		$valid['cookie_bar_show_condition'] = $input['cookie_bar_show_condition'];
 
-		$valid['cookie_bar_auto_hide'] = $this->isSetAndNotEmpty($input['cookie_bar_auto_hide']) ? $input['cookie_bar_auto_hide'] : '0';
+		$valid['cookie_bar_auto_hide'] = $input['cookie_bar_auto_hide'];
 
-		$valid['cookie_bar_auto_hide_delay'] = $this->isSetAndNotEmpty($input['cookie_bar_auto_hide_delay']) ? (int) $input['cookie_bar_auto_hide_delay'] : 3000;
+		$valid['cookie_bar_auto_hide_delay'] = $input['cookie_bar_auto_hide_delay'];
 
-		$valid['cookie_bar_hide_animation'] = $this->isSetAndNotEmpty($input['cookie_bar_hide_animation']) ? $input['cookie_bar_hide_animation'] : '0';
+		$valid['cookie_bar_hide_animation'] = $input['cookie_bar_hide_animation'];
 
-		$valid['custom_allowed_cookies'] = $this->isSetAndNotEmpty($input['custom_allowed_cookies']) ? $input['custom_allowed_cookies'] : 'wordpress_test_cookie,wordpress_logged_in_,wordpress_sec,wp-settings';
+		$valid['custom_allowed_cookies'] = $input['custom_allowed_cookies'];
 
 		// Cookie Toggle Button options
-		$valid['cookie_toggle_button']['status'] = $this->isSetAndNotEmpty($input['cookie_toggle_button']['status']) ? $input['cookie_toggle_button']['status'] : '1';
-		$valid['cookie_toggle_button']['text'] = $this->isSetAndNotEmpty($input['cookie_toggle_button']['text']) ? $input['cookie_toggle_button']['text'] : 'Cookies & Privacy Policy';
-		$valid['cookie_toggle_button']['background_color'] = $this->isSetAndNotEmpty($input['cookie_toggle_button']['background_color']) ? $input['cookie_toggle_button']['background_color'] : 'rgba(33, 33, 33, 0.8)';
-		$valid['cookie_toggle_button']['text_color'] = $this->isSetAndNotEmpty($input['cookie_toggle_button']['text_color']) ? $input['cookie_toggle_button']['text_color'] : 'rgba(255, 255, 255, 1)';
-		$valid['cookie_toggle_button']['show_border'] = $this->isSetAndNotEmpty($input['cookie_toggle_button']['show_border']) ? $input['cookie_toggle_button']['show_border'] : '0';
-		$valid['cookie_toggle_button']['border_color'] = $this->isSetAndNotEmpty($input['cookie_toggle_button']['border_color']) ? $input['cookie_toggle_button']['border_color'] : 'rgba(0, 0, 0, 1)';
+		$valid['cookie_toggle_button']['status'] = $input['cookie_toggle_button']['status'];
+		$valid['cookie_toggle_button']['text'] = $input['cookie_toggle_button']['text'];
+		$valid['cookie_toggle_button']['background_color'] = $input['cookie_toggle_button']['background_color'];
+		$valid['cookie_toggle_button']['text_color'] = $input['cookie_toggle_button']['text_color'];
+		$valid['cookie_toggle_button']['show_border'] = $input['cookie_toggle_button']['show_border'];
+		$valid['cookie_toggle_button']['border_color'] = $input['cookie_toggle_button']['border_color'];
 
 		// Cookie Bar options
-		$valid['cookie_bar']['message'] = $this->isSetAndNotEmpty($input['cookie_bar']['message']) ? $input['cookie_bar']['message'] : 'This site uses cookies to provide you with a more responsive and personalized service. By using this site you agree to our use of cookies. Please read our cookie notice for more information on the cookies we use and how to delete or block them.';
-		$valid['cookie_bar']['background_color'] = $this->isSetAndNotEmpty($input['cookie_bar']['background_color']) ? $input['cookie_bar']['background_color'] : 'rgba(33, 33, 33, 0.8)';
-		$valid['cookie_bar']['text_color'] = $this->isSetAndNotEmpty($input['cookie_bar']['text_color']) ? $input['cookie_bar']['text_color'] : 'rgba(255, 255, 255, 1)';
-		$valid['cookie_bar']['show_border'] = $this->isSetAndNotEmpty($input['cookie_bar']['show_border']) ? $input['cookie_bar']['show_border'] : '0';
-		$valid['cookie_bar']['border_color'] = $this->isSetAndNotEmpty($input['cookie_bar']['border_color']) ? $input['cookie_bar']['border_color'] : 'rgba(0, 0, 0, 1)';
+		$valid['cookie_bar']['message'] = $input['cookie_bar']['message'];
+		$valid['cookie_bar']['background_color'] = $input['cookie_bar']['background_color'];
+		$valid['cookie_bar']['text_color'] = $input['cookie_bar']['text_color'];
+		$valid['cookie_bar']['show_border'] = $input['cookie_bar']['show_border'];
+		$valid['cookie_bar']['border_color'] = $input['cookie_bar']['border_color'];
 
 		// Accept Button options
-		$valid['accept_button']['text'] = $this->isSetAndNotEmpty($input['accept_button']['text']) ? $input['accept_button']['text'] : 'Accept';
-		$valid['accept_button']['action'] = $this->isSetAndNotEmpty($input['accept_button']['action']) ? $input['accept_button']['action'] : 'hide';
-		$valid['accept_button']['url'] = $this->isSetAndNotEmpty($input['accept_button']['url']) ? $input['accept_button']['url'] : '';
-		$valid['accept_button']['target'] = $this->isSetAndNotEmpty($input['accept_button']['target']) ? $input['accept_button']['target'] : '_self';
-		$valid['accept_button']['text_color'] = $this->isSetAndNotEmpty($input['accept_button']['text_color']) ? $input['accept_button']['text_color'] : '#FFFFFF';
-		$valid['accept_button']['show_as'] = $this->isSetAndNotEmpty($input['accept_button']['show_as']) ? $input['accept_button']['show_as'] : 'text';
-		$valid['accept_button']['background_color'] = $this->isSetAndNotEmpty($input['accept_button']['background_color']) ? $input['accept_button']['background_color'] : 'transparent';
+		$valid['accept_button']['text'] = $input['accept_button']['text'];
+		$valid['accept_button']['action'] = $input['accept_button']['action'];
+		$valid['accept_button']['url'] = $input['accept_button']['url'];
+		$valid['accept_button']['target'] = $input['accept_button']['target'];
+		$valid['accept_button']['text_color'] = $input['accept_button']['text_color'];
+		$valid['accept_button']['show_as'] = $input['accept_button']['show_as'];
+		$valid['accept_button']['background_color'] = $input['accept_button']['background_color'];
 
 		// Decline Button options
-		$valid['decline_button']['text'] = $this->isSetAndNotEmpty($input['decline_button']['text']) ? $input['decline_button']['text'] : 'Decline';
-		$valid['decline_button']['action'] = $this->isSetAndNotEmpty($input['decline_button']['action']) ? $input['decline_button']['action'] : 'hide';
-		$valid['decline_button']['url'] = $this->isSetAndNotEmpty($input['decline_button']['url']) ? $input['decline_button']['url'] : '';
-		$valid['decline_button']['target'] = $this->isSetAndNotEmpty($input['decline_button']['target']) ? $input['decline_button']['target'] : '_self';
-		$valid['decline_button']['text_color'] = $this->isSetAndNotEmpty($input['decline_button']['text_color']) ? $input['decline_button']['text_color'] : '#FFFFFF';
-		$valid['decline_button']['show_as'] = $this->isSetAndNotEmpty($input['decline_button']['show_as']) ? $input['decline_button']['show_as'] : 'text';
-		$valid['decline_button']['background_color'] = $this->isSetAndNotEmpty($input['decline_button']['background_color']) ? $input['decline_button']['background_color'] : 'transparent';
+		$valid['decline_button']['text'] = $input['decline_button']['text'];
+		$valid['decline_button']['action'] = $input['decline_button']['action'];
+		$valid['decline_button']['url'] = $input['decline_button']['url'];
+		$valid['decline_button']['target'] = $input['decline_button']['target'];
+		$valid['decline_button']['text_color'] = $input['decline_button']['text_color'];
+		$valid['decline_button']['show_as'] = $input['decline_button']['show_as'];
+		$valid['decline_button']['background_color'] = $input['decline_button']['background_color'];
 
 		return $valid;
-	}
-
-	/**
-	 * Helper function to check set and not empty variable
-	 *
-	 * @since 	1.0.0
-	 * @param  variable  $var A variable to check
-	 * @return boolean
-	 */
-	public function isSetAndNotEmpty($var) {
-		if (isset($var) && ($var !== "")){
-			return true;
-		}
-		return false;
 	}
 
 	/**

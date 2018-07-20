@@ -4,7 +4,7 @@ Donate link: https://www.wpexec.com
 Tags: GDPR, eu cookie law, cookie consent, ultimate cookie, privacy, compliance, privacy directive, cookie, cookies, bar, cookies notification, cookies notice
 Requires at least: 3.3.1
 Tested up to: 4.9.7
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,14 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
+= 1.0.2 =
+Release Date: July 20th, 2018
+
+Bugfixes:
+* Fixes cookie bar toggle button doesn't show saved text from database
+* Hide cookie bar border bottom
+* Fixes values doesn't get save correctly
+
 = 1.0.1 =
 Release Date: July 14th, 2018
 
@@ -88,3 +96,6 @@ Notes:
 * First Release
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+High recommend for all users. Fixes several bug that caused the plugin to performs incorrectly.
