@@ -306,7 +306,7 @@ class Ultimate_Gdpr_Consent_Public {
 		if (isset($options['cookie_toggle_button']['status']) && $options['cookie_toggle_button']['status'] == '1') {
 			echo '
 				<div id="ugc-cookie-toggle" class="'.$ugc_toggle_class.'">
-					<span id="ugc-cookie-toggle-text">Cookies & Privacy Policy</span>
+					<span id="ugc-cookie-toggle-text">'.$options['cookie_toggle_button']['text'].'</span>
 				</div>
 			';
 		}
