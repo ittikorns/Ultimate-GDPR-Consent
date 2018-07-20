@@ -79,6 +79,7 @@
 			self.elements.declineButton.on('click', function(e) {
 				if (!self.elements.declineButton.hasClass('ugc-button-url')) {
 					e.preventDefault();
+					self.hideCookieBar();
 				}
 				$.ajax({
 					type: 'post',
@@ -98,6 +99,7 @@
 			var self = this;
 			self.elements.acceptButton.on('click', function(e) {
 				e.preventDefault();
+				self.hideCookieBar();
 				$.ajax({
 					type: 'post',
 					url: self.options.ajax_url,
@@ -107,7 +109,6 @@
 					},
 					success: function() {
 						self.elements.cookie_bar.addClass('ugc-force-hide ugc-hidden');
-						self.hideCookieBar();
 					}
 				});
 			});
