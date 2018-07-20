@@ -125,6 +125,18 @@
 						.addClass('button-primary');
 				});
 			};
+			$scope.sendDataBreachEmail = function($event) {
+				$($event.currentTarget)
+					.val('Sending...')
+					.attr('disabled', true)
+					.removeClass('button-primary');
+				ugcFactory.sendDataBreachEmail($scope).then(function(response) {
+					$($event.currentTarget)
+						.val('All done!')
+						.attr('disabled', false)
+						.addClass('button-primary');
+				});
+			};
 		}
 	]);
 
@@ -178,6 +190,13 @@
 			factory.sendPolicyUpdates = function($scope) {
 				$scope.post_data = {
 					action: 'ugc_send_policy_updates'
+				};
+				return factory.doPostAjaxHttpRequest($scope);
+			};
+
+			factory.sendDataBreachEmail = function($scope) {
+				$scope.post_data = {
+					action: 'ugc_send_data_breach_email'
 				};
 				return factory.doPostAjaxHttpRequest($scope);
 			};

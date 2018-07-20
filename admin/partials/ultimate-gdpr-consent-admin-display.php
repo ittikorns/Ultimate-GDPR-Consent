@@ -552,6 +552,43 @@ $options = get_option($this->plugin_name);
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <hr />
+                                    <table class="form-table">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">
+                                                    <label for="<?=$this->plugin_name;?>[data_breach]['message']"><?php _e('Data Breach', $this->plugin_name); ?></label>
+                                                </th>
+                                                <td>
+                                                    <p><strong><?php _e('From:', $this->plugin_name); ?></strong></p>
+                                                    <input type="text" name="<?=$this->plugin_name;?>[data_breach][from]" ng-model="form.data_breach.from" id="data_breach" />
+                                                    <p><i><?php _e('The email address which emails are sent from.', $this->plugin_name); ?></i></p>
+
+                                                    <p><strong><?php _e('From Name:', $this->plugin_name); ?></strong></p>
+                                                    <input type="text" name="<?=$this->plugin_name;?>[data_breach][from_name]" ng-model="form.data_breach.from_name" id="data_breach" />
+                                                    <p><i><?php _e('The name which emails are sent from.', $this->plugin_name); ?></i></p>
+
+                                                    <p><strong><?php _e('Subject:', $this->plugin_name); ?></strong></p>
+                                                    <input type="text" name="<?=$this->plugin_name;?>[data_breach][subject]" ng-model="form.data_breach.subject" id="data_breach" />
+                                                    <p><i><?php _e('A Subject of your policy update email', $this->plugin_name); ?></i></p>
+
+                                                    <p><strong><?php _e('Message:', $this->plugin_name); ?></strong></p>
+                                                    <textarea name="<?=$this->plugin_name;?>[data_breach][message]" ng-model="form.data_breach.message" id="data_breach_message"></textarea>
+                                                    <p><i><?php _e('Message that you want to send in the email. %s will be replaced by username', $this->plugin_name); ?></i></p>
+
+                                                    <input type="button" name="submit" id="submit" class="button button-primary" value="Save changes" ng-click="saveChanges();">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <label for="<?=$this->plugin_name;?>[cookie_bar]['message']"><?php _e('Bulk Send Data Breach Emails', $this->plugin_name); ?></label>
+                                                </th>
+                                                <td>
+                                                    <input type="button" name="submit" id="submit" class="button button-primary" value="Send Data Breach Email to All Users" ng-click="sendDataBreachEmail($event);">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div><!-- .ugc-tabs-container -->
                         </div>

@@ -245,6 +245,11 @@ class Ultimate_Gdpr_Consent_Admin {
 		$valid['policy_update']['subject'] = $this->isSetAndNotEmpty($input['policy_update']['subject']) ? $input['policy_update']['subject'] : __('Updates to our Privacy Policy');
 		$valid['policy_update']['message'] = $this->isSetAndNotEmpty($input['policy_update']['message']) ? $input['policy_update']['message'] : __('Hello %s! We hve updates our privacy policy.');
 
+		$valid['data_breach']['from'] = $input['data_breach']['from'];
+		$valid['data_breach']['from_name'] = $input['data_breach']['from_name'];
+		$valid['data_breach']['subject'] = $input['data_breach']['subject'];
+		$valid['data_breach']['message'] = $input['data_breach']['message'];
+
 		return $valid;
 	}
 

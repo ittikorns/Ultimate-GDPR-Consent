@@ -102,6 +102,12 @@ class Ultimate_Gdpr_Consent_Public {
 				'from_name'			=>	get_option('blogname'),
 				'subject'			=>	__('Updates to our Privacy Policy'),
 				'message'			=>	__('Hello %s! We hve updates our privacy policy.'),
+			),
+			'data_breach'	=>	array(
+				'from'				=>	get_option('admin_email'),
+				'from_name'			=>	get_option('blogname'),
+				'subject'			=>	__('Data Breach'),
+				'message'			=>	__('Hello %s! Recently, there is a security incident. To secure your account, you\'ll need to login to your account and change a new password.'),
 			)
 		);
 
