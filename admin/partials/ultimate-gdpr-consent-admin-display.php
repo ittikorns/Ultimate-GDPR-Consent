@@ -176,7 +176,7 @@ $options = get_option($this->plugin_name);
                                             </tr>
                                             <tr>
                                                 <th scope="row">
-                                                    <label for="<?=$this->plugin_name;?>[cookie_bar_header_float]"><?php esc_attr_e('Custom Allowed Cookies', $this->plugin_name); ?></label>
+                                                    <label for="<?=$this->plugin_name;?>[cookie_bar_header_float]"><?php esc_attr_e('Cookies Lifetime', $this->plugin_name); ?></label>
                                                 </th>
                                                 <td>
                                                     <input type="text" name="<?=$this->plugin_name;?>[cookie_age]" ng-model="form.cookie_age" id="cookie_age" />
