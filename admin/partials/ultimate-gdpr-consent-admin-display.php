@@ -186,7 +186,7 @@ $options = get_option($this->plugin_name);
                                         </tbody>
                                     </table>
 
-                                    <p class="submit"><input type="button" name="submit" id="submit" class="button button-primary" value="Save all changes" ng-click="saveChanges();"></p>
+                                    <p class="submit"><input type="button" name="submit" id="submit" class="button button-primary" value="Save all changes" ng-click="saveChanges($event);"></p>
 
                                     <!-- End General Options -->
                                 </div>
@@ -246,7 +246,7 @@ $options = get_option($this->plugin_name);
                                         </tbody>
                                     </table>
 
-                                    <p class="submit"><input type="button" name="submit" id="submit" class="button button-primary" value="Save all changes" ng-click="saveChanges();"></p>
+                                    <p class="submit"><input type="button" name="submit" id="submit" class="button button-primary" value="Save all changes" ng-click="saveChanges($event);"></p>
                                     <!-- End Cookie Bar Customization -->
                                 </div>
                                 <div id="ugc-toggle-button" class="ugc-tab">
@@ -318,7 +318,7 @@ $options = get_option($this->plugin_name);
                                         </tbody>
                                     </table>
 
-                                    <p class="submit"><input type="button" name="submit" id="submit" class="button button-primary" value="Save all changes" ng-click="saveChanges();"></p>
+                                    <p class="submit"><input type="button" name="submit" id="submit" class="button button-primary" value="Save all changes" ng-click="saveChanges($event);"></p>
                                     <!-- End Cookie Bar Toggle Button Customization -->
                                 </div>
                                 <div id="ugc-accept-button" class="ugc-tab">
@@ -407,7 +407,7 @@ $options = get_option($this->plugin_name);
                                         </tbody>
                                     </table>
 
-                                    <p class="submit"><input type="button" name="submit" id="submit" class="button button-primary" value="Save all changes" ng-click="saveChanges();"></p>
+                                    <p class="submit"><input type="button" name="submit" id="submit" class="button button-primary" value="Save all changes" ng-click="saveChanges($event);"></p>
                                     <!-- End Accept Button -->
                                 </div>
                                 <div id="ugc-decline-button" class="ugc-tab">
@@ -511,7 +511,7 @@ $options = get_option($this->plugin_name);
                                         </tbody>
                                     </table>
 
-                                    <p class="submit"><input type="button" name="submit" id="submit" class="button button-primary" value="Save all changes" ng-click="saveChanges();"></p>
+                                    <p class="submit"><input type="button" name="submit" id="submit" class="button button-primary" value="Save all changes" ng-click="saveChanges($event);"></p>
                                     <!-- End Decline Button -->
                                 </div>
                                 <div id="ugc-privacy-center" class="ugc-tab">
@@ -539,7 +539,7 @@ $options = get_option($this->plugin_name);
                                                     <textarea name="<?=$this->plugin_name;?>[policy_update][message]" ng-model="form.policy_update.message" id="policy_update_message"></textarea>
                                                     <p><i><?php _e('Message that you want to send in the email. %s will be replaced by username', $this->plugin_name); ?></i></p>
 
-                                                    <input type="button" name="submit" id="submit" class="button button-primary" value="Save changes" ng-click="saveChanges();">
+                                                    <input type="button" name="submit" id="submit" class="button button-primary" value="Save changes" ng-click="saveChanges($event);">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -576,7 +576,7 @@ $options = get_option($this->plugin_name);
                                                     <textarea name="<?=$this->plugin_name;?>[data_breach][message]" ng-model="form.data_breach.message" id="data_breach_message"></textarea>
                                                     <p><i><?php _e('Message that you want to send in the email. %s will be replaced by username', $this->plugin_name); ?></i></p>
 
-                                                    <input type="button" name="submit" id="submit" class="button button-primary" value="Save changes" ng-click="saveChanges();">
+                                                    <input type="button" name="submit" id="submit" class="button button-primary" value="Save changes" ng-click="saveChanges($event);">
                                                 </td>
                                             </tr>
                                             <tr>

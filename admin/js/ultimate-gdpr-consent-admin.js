@@ -103,13 +103,25 @@
 					console.error(error);
 				}
 			);
-			$scope.saveChanges = function() {
+			$scope.saveChanges = function($event) {
+				$($event.currentTarget)
+					.val('Saving...')
+					.attr('disabled', true)
+					.removeClass('button-primary');
 				ugcFactory.saveSetting($scope).then(
 					function(response) {
 						ugcFactory.showAlert({ result: true, title: 'Saved' });
+						$($event.currentTarget)
+							.val('Save changes')
+							.attr('disabled', false)
+							.addClass('button-primary');
 					},
 					function(error) {
 						console.error(error);
+						$($event.currentTarget)
+							.val('Save changes')
+							.attr('disabled', false)
+							.addClass('button-primary');
 					}
 				);
 			};
