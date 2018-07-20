@@ -78,6 +78,14 @@
 
 	$(document).ready(function() {
 		$('body').ultimate_gdpr_consent();
+		toastr.options = {
+			positionClass: 'toast-bottom-right',
+			timeOut: '1500',
+			hideDuration: '300',
+			preventDuplicates: true,
+			newestOnTop: true,
+			progressBar: true
+		};
 	});
 
 	// Define the `phonecatApp` module
@@ -162,22 +170,12 @@
 					if (typeof result.title === 'undefined') {
 						result.title = 'Good job!';
 					}
-					swal({
-						title: result.title,
-						text: result.message,
-						timer: 1200,
-						type: 'success'
-					});
+					toastr.success(result.title);
 				} else {
 					if (typeof result.title === 'undefined') {
 						result.title = 'Oops...';
 					}
-					swal({
-						title: result.title,
-						text: result.message,
-						timer: 1200,
-						type: 'error'
-					});
+					toastr.error(result.title);
 				}
 			};
 

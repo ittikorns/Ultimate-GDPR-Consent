@@ -74,6 +74,7 @@ class Ultimate_Gdpr_Consent_Admin {
 		 */
 
 		wp_enqueue_style( $this->plugin_name.'-angular-color-picker', plugin_dir_url( __FILE__ ) . 'js/libs/angular-color-picker/angularjs-color-picker.min.css', array(), $this->version, false );
+		wp_enqueue_style( $this->plugin_name.'-toastr', plugin_dir_url( __FILE__ ) . 'js/libs/toastr/toastr.min.css', array(), $this->version, false );
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/ultimate-gdpr-consent-admin.css', array(), $this->version, 'all' );
 
 	}
@@ -99,8 +100,8 @@ class Ultimate_Gdpr_Consent_Admin {
 
 		// Color Pickers
 		wp_enqueue_script( $this->plugin_name.'-tinycolor', plugin_dir_url( __FILE__ ) . 'js/libs/tinycolor/tinycolor.min.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name.'-swal2', plugin_dir_url( __FILE__ ) . 'js/libs/swal2/swal2.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name.'-angular', plugin_dir_url( __FILE__ ) . 'js/angular.min.js', array( $this->plugin_name.'-swal2' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name.'-toastr', plugin_dir_url( __FILE__ ) . 'js/libs/toastr/toastr.min.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name.'-angular', plugin_dir_url( __FILE__ ) . 'js/angular.min.js', array( $this->plugin_name.'-toastr' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name.'-angular-color-picker', plugin_dir_url( __FILE__ ) . 'js/libs/angular-color-picker/angularjs-color-picker.min.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ultimate-gdpr-consent-admin-min.js', array( 'jquery', $this->plugin_name.'-angular' ), $this->version, false );
 
