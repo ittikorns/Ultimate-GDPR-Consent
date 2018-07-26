@@ -83,7 +83,7 @@ class Ultimate_Gdpr_Consent_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts($hook) {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -96,6 +96,10 @@ class Ultimate_Gdpr_Consent_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+
+		 if ( strpos($hook, $this->plugin_name) === false ) {
+	         return;
+	     }
 
 		// Color Pickers
 		wp_enqueue_script( $this->plugin_name.'-tinycolor', plugin_dir_url( __FILE__ ) . 'js/libs/tinycolor/tinycolor.min.js', array( 'jquery' ), $this->version, false );

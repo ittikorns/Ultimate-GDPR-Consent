@@ -4,7 +4,7 @@ Donate link: https://www.wpexec.com
 Tags: GDPR, eu cookie law, cookie consent, ultimate cookie, privacy, compliance, privacy directive, cookie, cookies, bar, cookies notification, cookies notice
 Requires at least: 3.3.1
 Tested up to: 4.9.7
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,12 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
+= 1.0.3 =
+Release Date: July 26th, 2018
+
+Enhancements:
+* Prevents libraries conflict with other plugins.
+
 = 1.0.2 =
 Release Date: July 20th, 2018
 
@@ -96,6 +102,9 @@ Notes:
 * First Release
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+Upgrade is recommend to prevent any conflict that may occurs with other themes or plugins.
 
 = 1.0.2 =
 High recommend for all users. Fixes several bug that caused the plugin to performs incorrectly.
