@@ -168,8 +168,8 @@ class Ultimate_Gdpr_Consent_Public {
 		$options = get_option($this->plugin_name);
 		$strings = array(
 			'ajax_url' => admin_url('admin-ajax.php'),
-			'auto_hide_delay'	=>	$options['cookie_bar_auto_hide_delay'],
-			'scroll_offset'	=>	$options['cookie_bar']['scroll_offset'],
+			'auto_hide_delay'	=>	isset($options['cookie_bar_auto_hide_delay']) ? $options['cookie_bar_auto_hide_delay'] : 5000,
+			'scroll_offset'	=>	isset($options['cookie_bar']['scroll_offset']) ? $options['cookie_bar']['scroll_offset'] : 150,
 		);
 		return $strings;
 	}
